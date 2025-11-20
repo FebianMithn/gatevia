@@ -1,46 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Gatevia Technologies - Starlink Services & Tech Solutions</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!-- Navigation -->
-        <nav>
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="logo.png" width="35" height="35">
-                    Gatevia Technologies
-                </div>
-                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </div>
-        </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatevia Technologies - Starlink Services & Tech Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="logo.png" width="35" height="35" alt="Gatevia Technologies Logo">
+                Gatevia Technologies
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <img src="logo.png" width="150" height="150">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h3 class="motto">GateVia to a smarter tomorrow</h3>
             <h1>Welcome to Gatevia Technologies</h1>
             <p>
                 Your trusted partner for Starlink connectivity and comprehensive
                 technology solutions
             </p>
             <a href="#contact" class="cta-button">Get Connected Today</a>
-        </section>
+        </div>
+    </section>
 
-        <!-- Services Section -->
-        <section id="services">
-            <h2>Our Services</h2>
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="text-center">Our Services</h2>
 
             <div class="featured-service">
-                <h3>🛰️ Starlink Authorized Agent</h3>
+                <h3><i class="fas fa-satellite"></i> Starlink Authorized Agent</h3>
                 <p>
                     Experience high-speed satellite internet anywhere. We
                     provide complete Starlink subscription services,
@@ -51,7 +57,9 @@
 
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🌐</div>
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
                     <h3>Internet Connectivity</h3>
                     <p>
                         Reliable high-speed internet solutions powered by
@@ -62,7 +70,9 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">💻</div>
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
                     <h3>IT Consulting</h3>
                     <p>
                         Expert guidance on technology strategy, infrastructure
@@ -72,7 +82,9 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">🔧</div>
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
                     <h3>Technical Support</h3>
                     <p>
                         Comprehensive technical assistance and maintenance
@@ -82,7 +94,9 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">📡</div>
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
                     <h3>Network Solutions</h3>
                     <p>
                         Custom network design, implementation, and management
@@ -92,7 +106,9 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">🛠️</div>
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
                     <h3>System Integration</h3>
                     <p>
                         Seamless integration of various technology systems to
@@ -101,7 +117,9 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">📊</div>
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <h3>Business Solutions</h3>
                     <p>
                         Tailored technology solutions designed to optimize your
@@ -109,11 +127,13 @@
                     </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Us</h2>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="text-center">About Us</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>
@@ -155,31 +175,33 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Us</h2>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
             <div class="contact-container">
                 <div class="contact-form">
-                    <form onsubmit="handleSubmit(event)">
+                    <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" required />
+                            <input type="text" id="name" name="name" required />
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" required />
+                            <input type="email" id="email" name="email" required />
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" required />
+                            <input type="tel" id="phone" name="phone" required />
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" required></textarea>
+                            <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="cta-button">
+                        <button type="submit" class="cta-button" id="submitBtn">
                             Send Message
                         </button>
                     </form>
@@ -187,19 +209,19 @@
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
                     <div class="contact-item">
-                        <strong>📧 Email</strong>
+                        <strong><i class="fas fa-envelope"></i> Email</strong>
                         <p>info@gateviatechnologies.net</p>
                     </div>
                     <div class="contact-item">
-                        <strong>📞 Phone</strong>
-                        <p>+260 XXX XXX XXX</p>
+                        <strong><i class="fas fa-phone"></i> Phone</strong>
+                        <p>+260 960 563 199</p>
                     </div>
                     <div class="contact-item">
-                        <strong>📍 Location</strong>
-                        <p>Lusaka, Zambia</p>
+                        <strong><i class="fas fa-map-marker-alt"></i> Location</strong>
+                        <p>Choma, Lusaka, Zambia</p>
                     </div>
                     <div class="contact-item">
-                        <strong>🕒 Business Hours</strong>
+                        <strong><i class="fas fa-clock"></i> Business Hours</strong> &nbsp;
                         <p>
                             Monday - Friday: 8:00 AM - 5:00 PM<br />Saturday:
                             9:00 AM - 1:00 PM
@@ -207,47 +229,97 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
             <p>&copy; 2024 Gatevia Technologies. All rights reserved.</p>
             <p>Connecting you to the future of technology</p>
-        </footer>
+        </div>
+    </footer>
 
-        <script>
-            function toggleMenu() {
-                const navLinks = document.getElementById("navLinks");
-                navLinks.classList.toggle("active");
-            }
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("C9ooba9mlWmUHYl5R"); // You'll get this from EmailJS
+        })();
 
-            function handleSubmit(event) {
-                event.preventDefault();
-                alert(
-                    "Thank you for your message! We will get back to you shortly.",
-                );
-                event.target.reset();
-            }
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
 
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-                anchor.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(
-                        this.getAttribute("href"),
-                    );
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
-                        });
-                        // Close mobile menu if open
-                        document
-                            .getElementById("navLinks")
-                            .classList.remove("active");
-                    }
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<span class="spinner"></span>Sending...';
+            submitBtn.disabled = true;
+
+            // Get form data - match these variable names to your template
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value,
+                to_email: 'info@gateviatechnologies.net',
+                from_name: 'Gatevia Technologies Website'
+            };
+
+            // Send email using EmailJS
+            emailjs.send('gatevia_gmail', 'template_dg2iykm', formData)
+                .then(function(response) {
+                    alert('Thank you for your message! We will get back to you shortly.');
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    alert('Sorry, there was an error sending your message. Please try again or contact us directly at info@gateviatechnologies.net');
+                    console.error('EmailJS Error:', error);
+                })
+                .finally(function() {
+                    // Reset button state
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
                 });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const target = document.querySelector(
+                    this.getAttribute("href"),
+                );
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                    // Close mobile menu if open
+                    document
+                        .getElementById("navLinks")
+                        .classList.remove("active");
+                }
             });
-        </script>
-    </body>
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.padding = '0.5rem 0';
+            } else {
+                nav.style.padding = '1rem 0';
+            }
+        });
+    </script>
+</body>
 </html>
