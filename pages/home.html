@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatevia Technologies - Starlink Services & Tech Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="home.html" class="logo">
+                <img src="../assets/images/logo.png" width="35" height="35" alt="Gatevia Technologies Logo">
+                Gatevia Technologies
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main>
+    <section class="hero hero-full">
+        <div class="hero-background">
+            <div class="hero-grid"></div>
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-main">
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i>
+                    <span>Official Starlink Authorized Partner</span>
+                </div>
+                <div class="hero-text">
+                    <h3 class="motto">GateVia to a smarter tomorrow</h3>
+                    <h1 class="hero-title">
+                        <span class="title-line">Welcome to Gatevia</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Experience lightning-fast satellite internet with 99.9% uptime guarantee. 
+                        Trusted by 100+ businesses and families nationwide.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Mbps</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="contact.html" class="cta-button primary">
+                            <i class="fas fa-rocket"></i>
+                            Get Started Now
+                        </a>
+                        <a href="https://wa.me/260963663537" target="_blank" class="cta-button whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-side">
+                <!-- Service Carousel -->
+                <div class="service-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="service-slide active">
+                                <div class="slide-icon">
+                                    <i class="fas fa-satellite-dish"></i>
+                                </div>
+                                <h4>Starlink Internet</h4>
+                                <p>High-speed satellite internet with guaranteed uptime</p>
+                                <div class="slide-price">Competitive Rates</div>
+                            </div>
+                            <div class="service-slide">
+                                <div class="slide-icon">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <h4>Network Solutions</h4>
+                                <p>Enterprise-grade network design & security</p>
+                                <div class="slide-price">Custom Solutions</div>
+                            </div>
+                            <div class="service-slide">
+                                <div class="slide-icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <h4>IT Consulting</h4>
+                                <p>Digital transformation & cloud migration</p>
+                                <div class="slide-price">Expert Pricing</div>
+                            </div>
+                            <div class="service-slide">
+                                <div class="slide-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <h4>Technical Support</h4>
+                                <p>24/7 maintenance & emergency response</p>
+                                <div class="slide-price">Flexible Plans</div>
+                            </div>
+                        </div>
+                        <div class="carousel-dots">
+                            <button class="dot active" onclick="showSlide(0)"></button>
+                            <button class="dot" onclick="showSlide(1)"></button>
+                            <button class="dot" onclick="showSlide(2)"></button>
+                            <button class="dot" onclick="showSlide(3)"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Gatevia Technologies. All rights reserved.</p>
+            <p>Connecting you to the future of technology</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.service-slide');
+        const dots = document.querySelectorAll('.dot');
+        let isTransitioning = false;
+
+        function showSlide(index) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+
+            // Remove all classes
+            slides.forEach(slide => {
+                slide.classList.remove('active', 'prev', 'next');
+            });
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Set current slide
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            
+            // Set adjacent slides for smooth transitions
+            const prevIndex = (index - 1 + slides.length) % slides.length;
+            const nextIndex = (index + 1) % slides.length;
+            
+            slides[prevIndex].classList.add('prev');
+            slides[nextIndex].classList.add('next');
+            
+            currentSlide = index;
+
+            // Reset transition lock after animation completes
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 1200);
+        }
+
+        // Auto-rotate carousel
+        function nextSlide() {
+            if (!isTransitioning) {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+        }
+
+        // Auto-rotate every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Initialize first slide
+        showSlide(0);
+
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.padding = '0.5rem 0';
+            } else {
+                nav.style.padding = '1rem 0';
+            }
+        });
+    </script>
+</body>
+</html>

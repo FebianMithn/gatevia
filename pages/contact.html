@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Gatevia Technologies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="home.html" class="logo">
+                <img src="../assets/images/logo.png" width="35" height="35" alt="Gatevia Technologies Logo">
+                Gatevia Technologies
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <main>
+    <section id="contact">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" id="submitBtn">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <strong><i class="fas fa-envelope"></i> Email</strong>
+                        <p>info@gateviatechnologies.net</p>
+                    </div>
+                    <div class="contact-item">
+                        <strong><i class="fab fa-whatsapp"></i> WhatsApp</strong>
+                        <p><a href="https://wa.me/260963663537" target="_blank" class="whatsapp-link">+260 963 663 537</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <strong><i class="fas fa-map-marker-alt"></i> Location</strong>
+                        <p>Choma, Lusaka, Zambia</p>
+                    </div>
+                    <div class="contact-item">
+                        <strong><i class="fas fa-clock"></i> Business Hours</strong> &nbsp;
+                        <p>
+                            Monday - Friday: 8:00 AM - 5:00 PM<br />Saturday:
+                            9:00 AM - 1:00 PM
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Gatevia Technologies. All rights reserved.</p>
+            <p>Connecting you to the future of technology</p>
+        </div>
+    </footer>
+
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("C9ooba9mlWmUHYl5R"); // You'll get this from EmailJS
+        })();
+
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<span class="spinner"></span>Sending...';
+            submitBtn.disabled = true;
+
+            // Get form data - match these variable names to your template
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value,
+                to_email: 'info@gateviatechnologies.net',
+                from_name: 'Gatevia Technologies Website'
+            };
+
+            // Send email using EmailJS
+            emailjs.send('gatevia_gmail', 'template_dg2iykm', formData)
+                .then(function(response) {
+                    alert('Thank you for your message! We will get back to you shortly.');
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    alert('Sorry, there was an error sending your message. Please try again or contact us directly at info@gateviatechnologies.net');
+                    console.error('EmailJS Error:', error);
+                })
+                .finally(function() {
+                    // Reset button state
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.padding = '0.5rem 0';
+            } else {
+                nav.style.padding = '1rem 0';
+            }
+        });
+    </script>
+</body>
+</html>

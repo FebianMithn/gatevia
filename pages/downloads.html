@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads - Gatevia Technologies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="home.html" class="logo">
+                <img src="../assets/images/logo.png" width="35" height="35" alt="Gatevia Technologies Logo">
+                Gatevia Technologies
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="downloads.html" class="active">Downloads</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Downloads Section -->
+    <main>
+    <section id="downloads">
+        <div class="container">
+            <div class="section-header">
+                <h2>Downloads & Resources</h2>
+                <p>Access important documents, guides, and resources for our services</p>
+            </div>
+            
+            <div class="downloads-grid">
+                <!-- SLA Document -->
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div class="download-content">
+                        <h3>Service Level Agreement (SLA)</h3>
+                        
+                        <div class="sla-description">
+                            <p>At Gatevia Technologies, we're committed to delivering high-quality internet services that meet your needs. Our Service Level Agreement (SLA) outlines the service expectations, responsibilities, and guarantees that we provide to our clients.</p>
+                            
+                            <div class="sla-section">
+                                <h4>What is an SLA?</h4>
+                                <p>An SLA is a formal document that defines the service standards and performance metrics that we commit to delivering to our clients. It ensures that we're accountable for providing reliable, fast, and secure internet services.</p>
+                            </div>
+                            
+                            <div class="sla-section">
+                                <h4>Why is an SLA important?</h4>
+                                <p>Our SLA is designed to:</p>
+                                <ul class="sla-benefits">
+                                    <li>Provide transparency and clarity on our service offerings</li>
+                                    <li>Ensure we're meeting your business needs</li>
+                                    <li>Outline our responsibilities and yours</li>
+                                    <li>Provide a framework for resolving any issues that may arise</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="sla-download">
+                                <h4>Download our SLA</h4>
+                                <p>If you're interested in learning more about our service commitments and guarantees, please download our SLA document:</p>
+                            </div>
+                        </div>
+                        
+                        <div class="download-details">
+                            <span class="file-type">PDF Document</span>
+                            <span class="file-size">~500 KB</span>
+                        </div>
+                        <a href="../assets/downloads/docs/SLA.pdf" class="download-btn" download target="_blank">
+                            <i class="fas fa-download"></i>
+                            Download SLA
+                        </a>
+                        
+                        <div class="sla-help">
+                            <p><strong>Need help understanding our SLA?</strong><br>If you have any questions or concerns about our SLA, please don't hesitate to contact us. We're here to help.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Download Placeholders (commented out for now) -->
+                <!--
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="download-content">
+                        <h3>User Guide</h3>
+                        <p>Complete user manual for our services and platform features.</p>
+                        <div class="download-details">
+                            <span class="file-type">PDF Document</span>
+                            <span class="file-size">Coming Soon</span>
+                        </div>
+                        <button class="download-btn disabled" disabled>
+                            <i class="fas fa-clock"></i>
+                            Coming Soon
+                        </button>
+                    </div>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="download-content">
+                        <h3>Security Guidelines</h3>
+                        <p>Best practices and security protocols for your systems.</p>
+                        <div class="download-details">
+                            <span class="file-type">PDF Document</span>
+                            <span class="file-size">Coming Soon</span>
+                        </div>
+                        <button class="download-btn disabled" disabled>
+                            <i class="fas fa-clock"></i>
+                            Coming Soon
+                        </button>
+                    </div>
+                </div>
+                -->
+            </div>
+
+            <div class="downloads-info">
+                <div class="info-card">
+                    <h4>Need Additional Documents?</h4>
+                    <p>Can't find what you're looking for? Contact our team to request specific documents or technical specifications.</p>
+                    <a href="contact.html" class="info-link">
+                        <i class="fas fa-envelope"></i>
+                        Request Document
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Gatevia Technologies. All rights reserved.</p>
+            <p>Connecting you to the future of technology</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.padding = '0.5rem 0';
+            } else {
+                nav.style.padding = '1rem 0';
+            }
+        });
+    </script>
+</body>
+</html>
