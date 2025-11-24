@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile - Gatevia Technologies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+    <style>
+        /* Profile page specific styles */
+        .profile-hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .profile-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .profile-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1d4ed8;
+            margin-bottom: 1.5rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .profile-subtitle {
+            font-size: 1.25rem;
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-weight: 400;
+        }
+
+        .profile-section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .profile-section:nth-child(even) {
+            background: #ffffff;
+        }
+
+        .profile-section:nth-child(odd) {
+            background: #f8fafc;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            letter-spacing: -0.01em;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border-radius: 2px;
+        }
+
+        .section-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #475569;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-list li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .feature-content p {
+            color: #64748b;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .mission-box {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .mission-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mission-text {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .why-choose-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .why-choose-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .why-choose-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .why-choose-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .why-choose-card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .profile-title {
+                font-size: 2rem;
+            }
+            
+            .profile-section {
+                padding: 3rem 1rem;
+            }
+            
+            .feature-list li {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="home.html" class="logo">
+                <img src="../assets/images/logo.png" width="35" height="35" alt="Gatevia Technologies Logo">
+                Gatevia Technologies
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Profile Hero Section -->
+    <section class="profile-hero">
+        <div class="profile-content">
+            <h1 class="profile-title">Company Profile</h1>
+            <p class="profile-subtitle">
+                Welcome to Gatevia Technologies, a leading provider of innovative technology solutions in Zambia. 
+                As a dynamic and customer-centric company, we're committed to delivering cutting-edge services that 
+                drive business growth and success.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="profile-section">
+        <h2 class="section-title">Our Story</h2>
+        <div class="section-content">
+            <p>
+                Established in 2023, Gatevia Technologies has been at the forefront of Zambia's technology industry 
+                for 3 years. Our team of experts is passionate about harnessing the power of technology to help 
+                businesses thrive in an increasingly digital world.
+            </p>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="profile-section">
+        <h2 class="section-title">What We Do</h2>
+        <div class="section-content">
+            <p>
+                We specialize in providing reliable and secure internet services, tailored to meet the unique needs 
+                of our clients. Our services include:
+            </p>
+            <ul class="feature-list">
+                <li>
+                    <div class="feature-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>High-speed internet connectivity</h4>
+                        <p>Lightning-fast internet solutions designed to keep your business connected and productive.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="feature-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Network solutions and infrastructure</h4>
+                        <p>Comprehensive network design, implementation, and maintenance for optimal performance.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Cybersecurity and data protection</h4>
+                        <p>Advanced security measures to protect your valuable data and digital assets.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Cloud services and hosting</h4>
+                        <p>Scalable cloud solutions that grow with your business needs.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="profile-section">
+        <div class="mission-box">
+            <h2 class="mission-title">Our Mission</h2>
+            <p class="mission-text">
+                Empowering businesses through innovative technology solutions, delivering exceptional customer 
+                experience, and driving growth through expertise and passion.
+            </p>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="profile-section">
+        <h2 class="section-title">Why Choose Us?</h2>
+        <div class="why-choose-grid">
+            <div class="why-choose-card">
+                <div class="why-choose-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h4>Customer-centric approach</h4>
+                <p>Your success is our priority. We tailor solutions to meet your specific needs.</p>
+            </div>
+            <div class="why-choose-card">
+                <div class="why-choose-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h4>Expert team with industry knowledge</h4>
+                <p>Our experienced professionals bring deep expertise and insights to every project.</p>
+            </div>
+            <div class="why-choose-card">
+                <div class="why-choose-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h4>Reliable and secure services</h4>
+                <p>Trust in our proven track record of delivering dependable, secure solutions.</p>
+            </div>
+            <div class="why-choose-card">
+                <div class="why-choose-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4>Scalable solutions for growing businesses</h4>
+                <p>Our solutions evolve with your business, supporting your growth every step of the way.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2 class="cta-title">Ready to Transform Your Business?</h2>
+        <p style="color: #64748b; font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            At Gatevia Technologies, we're committed to helping your business succeed. Contact us today to learn 
+            more about our services and how we can support your growth.
+        </p>
+        <a href="contact.html" class="cta-button">Get in Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Gatevia Technologies. All rights reserved.</p>
+            <p>Connecting you to the future of technology</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.padding = '0.5rem 0';
+            } else {
+                nav.style.padding = '1rem 0';
+            }
+        });
+
+        // Smooth scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for scroll animations
+        document.querySelectorAll('.profile-section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease-out';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
