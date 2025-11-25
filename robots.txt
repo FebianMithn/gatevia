@@ -18,3 +18,6 @@ Sitemap: https://gateviatech.com/sitemap.xml
 
 # Crawl delay (optional - be nice to servers)
 Crawl-delay: 1
+
+# Favicon location for search engines
+Allow: /favicon.ico
