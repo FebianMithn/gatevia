@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://gateviatech.com/pages/home.html</loc>
+        <lastmod>2024-11-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://gateviatech.com/pages/home.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://gateviatech.com/pages/home.html"/>
+    </url>
+    
+    <!-- Services Page -->
+    <url>
+        <loc>https://gateviatech.com/pages/services.html</loc>
+        <lastmod>2024-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://gateviatech.com/pages/services.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://gateviatech.com/pages/services.html"/>
+    </url>
+    
+    <!-- About Us Page -->
+    <url>
+        <loc>https://gateviatech.com/pages/about.html</loc>
+        <lastmod>2024-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://gateviatech.com/pages/about.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://gateviatech.com/pages/about.html"/>
+    </url>
+    
+    <!-- Contact Page -->
+    <url>
+        <loc>https://gateviatech.com/pages/contact.html</loc>
+        <lastmod>2024-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://gateviatech.com/pages/contact.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://gateviatech.com/pages/contact.html"/>
+    </url>
+    
+    <!-- Downloads Page -->
+    <url>
+        <loc>https://gateviatech.com/pages/downloads.html</loc>
+        <lastmod>2024-11-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://gateviatech.com/pages/downloads.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://gateviatech.com/pages/downloads.html"/>
+    </url>
+    
+    <!-- Domain Root -->
+    <url>
+        <loc>https://gateviatech.com/</loc>
+        <lastmod>2024-11-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://gateviatech.com/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://gateviatech.com/"/>
+    </url>
+    
+</urlset>
