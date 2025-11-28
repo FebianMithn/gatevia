@@ -105,8 +105,8 @@
     }
     </script>
     
-    <!-- SEO-friendly Redirect -->
-    <meta http-equiv="refresh" content="5; url=pages/home.html">
+    <!-- SEO-friendly Instant Redirect -->
+    <meta http-equiv="refresh" content="0; url=pages/home.html">
     <link rel="canonical" href="https://gateviatechnologies.net/pages/home.html">
     
     <style>
@@ -151,12 +151,6 @@
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
         }
-        .countdown {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 1rem 0;
-            opacity: 0.8;
-        }
     </style>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -164,33 +158,13 @@
 <body>
     <div class="redirect-container">
         <div class="logo">🚀 Gatevia Technologies</div>
-        <h1 class="redirect-message">Redirecting to our main website...</h1>
-        <div class="countdown" id="countdown">5</div>
-        <p>You'll be automatically redirected in <span id="redirect-text">5 seconds</span></p>
-        <a href="pages/home.html" class="redirect-link">Go to Home Page Now</a>
+        <h1 class="redirect-message">Loading our main website...</h1>
+        <p><a href="pages/home.html" class="redirect-link">Go to Home Page Now</a></p>
     </div>
 
     <script>
-        // Countdown timer
-        let seconds = 5;
-        const countdownEl = document.getElementById('countdown');
-        const redirectTextEl = document.getElementById('redirect-text');
-        
-        const timer = setInterval(() => {
-            seconds--;
-            countdownEl.textContent = seconds;
-            redirectTextEl.textContent = seconds + (seconds === 1 ? ' second' : ' seconds');
-            
-            if (seconds <= 0) {
-                clearInterval(timer);
-                window.location.href = 'pages/home.html';
-            }
-        }, 1000);
-        
-        // Fallback redirect
-        setTimeout(() => {
-            window.location.href = 'pages/home.html';
-        }, 5000);
+        // Instant redirect fallback
+        window.location.replace("pages/home.html");
     </script>
 </body>
 </html>
