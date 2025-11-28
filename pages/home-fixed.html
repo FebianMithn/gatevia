@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatevia Technologies - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary: #0f172a;
+            --accent: #06b6d4;
+            --light: #f8fafc;
+            --gray-light: #e2e8f0;
+            --gray: #64748b;
+            --gray-dark: #334155;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 2rem;
+            height: 60px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo img {
+            margin-right: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-dark);
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--secondary);
+        }
+
+        /* Main content */
+        main {
+            flex: 1;
+            padding-top: 0;
+        }
+
+        /* Hero Section */
+        .hero-full {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            margin-top: 60px; /* Account for fixed navigation */
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.25) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(37, 99, 235, 0.22) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            z-index: 2;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .hero-main {
+            width: 100%;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 1.5rem;
+        }
+
+        .motto {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #ffffff !important;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: #e0f2fe;
+            margin-bottom: 0;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-top: 2rem;
+        }
+
+        .cta-button.primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+            font-size: 1rem;
+        }
+
+        .cta-button.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.5);
+        }
+
+        .cta-button.whatsapp {
+            background: rgba(37, 211, 102, 0.15);
+            color: #86efac;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 1px solid rgba(37, 211, 102, 0.3);
+        }
+
+        .cta-button.whatsapp:hover {
+            background: rgba(37, 211, 102, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .hero-side {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Service Carousel */
+        .service-carousel-inline {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .carousel-container {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid rgba(132, 204, 22, 0.15);
+            box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .carousel-track {
+            position: relative;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .service-slide {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            opacity: 1;
+            transform: translateX(100%);
+            transition: all 0.8s ease;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1rem;
+        }
+
+        .service-slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: all;
+        }
+
+        .service-slide h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #78350f;
+            font-weight: 600;
+        }
+
+        .service-slide p {
+            color: #6b7280;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            font-size: 0.875rem;
+            max-width: 240px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .slide-price {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #65a30d;
+            background: rgba(251, 191, 36, 0.1);
+            padding: 0.4rem 0.875rem;
+            border-radius: 100px;
+            display: inline-block;
+            border: 1px solid rgba(132, 204, 22, 0.15);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(148, 163, 184, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #3b82f6;
+            transform: scale(1.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-full {
+                padding: 6rem 1.5rem 4rem;
+                margin-top: 60px;
+                min-height: auto;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .hero-main {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .motto {
+                font-size: 1.125rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .carousel-container {
+                padding: 2rem 1.5rem;
+                min-height: 280px;
+            }
+
+            .carousel-track {
+                height: 200px;
+            }
+
+            .service-slide h4 {
+                font-size: 1.375rem;
+            }
+
+            .service-slide p {
+                font-size: 0.875rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="home.html" class="logo">
+                <img src="../assets/images/logo.png" alt="Gatevia Technologies" width="30" height="30">
+                Gatevia Technologies
+            </a>
+            <ul class="nav-links">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero-full">
+            <div class="hero-background"></div>
+            <div class="hero-content">
+                <header class="hero-main">
+                    <div class="hero-badge">
+                        <i class="fas fa-award"></i>
+                        <span>Official Starlink Authorized Partner</span>
+                    </div>
+                    <h3 class="motto">GateVia to a smarter tomorrow</h3>
+                    <h1 class="hero-title">Welcome to Gatevia</h1>
+                    <p class="hero-subtitle">
+                        Experience lightning-fast satellite internet with guaranteed uptime. 
+                        Trusted by businesses and families nationwide for reliable connectivity.
+                    </p>
+                    <nav class="hero-buttons">
+                        <a href="contact.html" class="cta-button primary">
+                            <i class="fas fa-rocket"></i>
+                            Get Started Now
+                        </a>
+                        <a href="https://wa.me/260963663537" target="_blank" class="cta-button whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            Chat on WhatsApp
+                        </a>
+                    </nav>
+                </header>
+                
+                <aside class="hero-side">
+                    <!-- Service Carousel -->
+                    <section class="service-carousel-inline">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <article class="service-slide active">
+                                    <h4>Starlink Internet</h4>
+                                    <p>High-speed satellite internet with guaranteed uptime</p>
+                                    <div class="slide-price">Competitive Rates</div>
+                                </article>
+                                <article class="service-slide">
+                                    <h4>Network Solutions</h4>
+                                    <p>Enterprise-grade network design & security</p>
+                                    <div class="slide-price">Custom Solutions</div>
+                                </article>
+                                <article class="service-slide">
+                                    <h4>IT Consulting</h4>
+                                    <p>Digital transformation & cloud migration</p>
+                                    <div class="slide-price">Expert Pricing</div>
+                                </article>
+                                <article class="service-slide">
+                                    <h4>Technical Support</h4>
+                                    <p>24/7 maintenance & emergency response</p>
+                                    <div class="slide-price">Flexible Plans</div>
+                                </article>
+                            </div>
+                            <nav class="carousel-dots">
+                                <button class="dot active"></button>
+                                <button class="dot"></button>
+                                <button class="dot"></button>
+                                <button class="dot"></button>
+                            </nav>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Gatevia Technologies. All rights reserved.</p>
+            <p>Connecting you to the future of technology</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.service-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        // Auto-rotate carousel
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 3000);
+
+        // Dot click handlers
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Menu toggle for mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>

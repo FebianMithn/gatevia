@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Test - Gatevia Technologies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* Debug styles to verify CSS is loading */
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 9999;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .nav-container {
+            background: rgba(255, 255, 255, 0.9) !important;
+            border: 2px solid red !important;
+        }
+        .hero-full {
+            border: 3px solid blue !important;
+        }
+        .hero-content {
+            border: 2px solid green !important;
+        }
+        .hero-buttons {
+            border: 2px solid yellow !important;
+        }
+        .service-carousel-inline {
+            border: 2px solid purple !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info">
+        CSS LOADED: Test visible
+    </div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="home.html" class="logo">
+                <img src="../assets/images/logo.png" alt="Gatevia Technologies" width="30" height="30">
+                Gatevia Technologies
+            </a>
+            <ul class="nav-links">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero-full">
+            <div class="hero-background"></div>
+            <div class="hero-content">
+                <header class="hero-main">
+                    <div class="hero-badge">
+                        <i class="fas fa-award"></i>
+                        <span>Official Starlink Authorized Partner</span>
+                    </div>
+                    <h3 class="motto">GateVia to a smarter tomorrow</h3>
+                    <h1 class="hero-title">Welcome to Gatevia</h1>
+                    <p class="hero-subtitle">
+                        Experience lightning-fast satellite internet with guaranteed uptime. 
+                        Trusted by businesses and families nationwide for reliable connectivity.
+                    </p>
+                    <nav class="hero-buttons">
+                        <a href="contact.html" class="cta-button primary">
+                            <i class="fas fa-rocket"></i>
+                            Get Started Now
+                        </a>
+                        <a href="https://wa.me/260963663537" target="_blank" class="cta-button whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            Chat on WhatsApp
+                        </a>
+                    </nav>
+                </header>
+                
+                <aside class="hero-side">
+                    <!-- Service Carousel -->
+                    <section class="service-carousel-inline">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <article class="service-slide active">
+                                    <h4>Starlink Internet</h4>
+                                    <p>High-speed satellite internet with guaranteed uptime</p>
+                                    <div class="slide-price">Competitive Rates</div>
+                                </article>
+                                <article class="service-slide">
+                                    <h4>Network Solutions</h4>
+                                    <p>Enterprise-grade network design & security</p>
+                                    <div class="slide-price">Custom Solutions</div>
+                                </article>
+                            </div>
+                            <nav class="carousel-dots">
+                                <button class="dot active"></button>
+                                <button class="dot"></button>
+                            </nav>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Test if CSS is loaded
+        window.addEventListener('load', function() {
+            const heroContent = document.querySelector('.hero-content');
+            const computedStyle = window.getComputedStyle(heroContent);
+            const display = computedStyle.display;
+            
+            const debugInfo = document.querySelector('.debug-info');
+            debugInfo.innerHTML = `
+                CSS LOADED: Yes<br>
+                Hero Content Display: ${display}<br>
+                Flex Direction: ${computedStyle.flexDirection}<br>
+                Window Width: ${window.innerWidth}px
+            `;
+        });
+    </script>
+</body>
+</html>
