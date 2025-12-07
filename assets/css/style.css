@@ -325,6 +325,10 @@ nav {
     letter-spacing: 0.01em;
 }
 
+.hero-badge-link {
+    text-decoration: none;
+}
+
 .hero-badge i {
     font-size: 0.875rem;
 }
