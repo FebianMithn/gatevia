@@ -438,8 +438,8 @@ nav {
 }
 
 .carousel-container {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: saturate(180%) blur(20px);
+    background: rgba(153, 153, 153, 0.5);
+    /* backdrop-filter: saturate(180%) blur(20px); */
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     border-radius: 16px;
     padding: 2.5rem;
@@ -501,6 +501,7 @@ nav {
     color: var(--secondary);
     font-weight: 600;
     letter-spacing: -0.02em;
+    color: white;
 }
 
 .service-slide p {
@@ -513,13 +514,14 @@ nav {
     margin-right: auto;
     font-weight: 400;
     letter-spacing: -0.01em;
+    color: white;
 }
 
 .slide-price {
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--primary);
-    background: rgba(37, 99, 235, 0.08);
+    background: #ffffff;
     padding: 0.5rem 1.25rem;
     border-radius: 100px;
     display: inline-block;
@@ -1330,7 +1332,7 @@ footer a:hover {
 .service-carousel-inline .service-slide h4 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    color: #78350f;
+    color: #ffffff;
     font-weight: 600;
     transform: translateY(0);
     transition: all 0.25s ease 0.05s;
@@ -1343,7 +1345,7 @@ footer a:hover {
 }
 
 .service-carousel-inline .service-slide p {
-    color: #6b7280;
+    color: #ffffff;
     margin-bottom: 1rem;
     line-height: 1.5;
     font-size: 0.875rem;
@@ -1364,8 +1366,8 @@ footer a:hover {
 .service-carousel-inline .slide-price {
     font-size: 0.8rem;
     font-weight: 600;
-    color: #65a30d;
-    background: rgba(251, 191, 36, 0.1);
+    color: #ffffff;
+    background: rgba(48, 48, 48, 0.466);
     padding: 0.4rem 0.875rem;
     border-radius: 100px;
     display: inline-block;
@@ -1382,9 +1384,9 @@ footer a:hover {
 }
 
 .service-carousel-inline .service-slide.active .slide-price {
-    background: rgba(251, 191, 36, 0.15);
+    background: rgba(48, 48, 48, 0.466);
     transform: translateY(0);
-    color: #4d7c0f;
+    color: #ffffff;
 }
 
 @keyframes floatObject1 {
